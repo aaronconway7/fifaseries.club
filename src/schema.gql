@@ -1,0 +1,58 @@
+# people who are playing the fifa game
+type Player {
+    name: String!
+    userId: String
+    series: [Series!]
+}
+
+# collection of games
+type Series {
+    name: String!
+    private: Boolean!
+    players: [Player!]
+}
+
+# type Series {
+#     name: String!
+#     description: String
+#     players: [Player!] @relation
+#     matches: [Match!] @relation
+#     private: Boolean!
+# }
+
+# type Player {
+#     name: String!
+#     squad: [SquadMember!]
+#     stats: PlayerStats
+#     series: Series!
+# }
+
+# type PlayerStats @embedded {
+#     gf: Int!
+#     ga: Int!
+#     gd: Int!
+#     pts: Int!
+# }
+
+# type SquadMember {
+#     name: String!
+#     goals: Int!
+#     player: Player!
+# }
+
+# type Match {
+#     player1: MatchStats!
+#     player2: MatchStats!
+#     series: Series!
+# }
+
+# type MatchStats {
+#     player: Player!
+#     goals: Int!
+#     # scorers: [SquadMember]
+#     # match: Match!
+# }
+
+# type Query {
+#     allSeries: [Series!]
+# }
